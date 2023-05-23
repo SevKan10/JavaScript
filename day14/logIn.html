@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+        <script>
+            alert("Xin chào bạn đến với trang web");
+        </script>
+
+        
+    <body>
+      <h2>Đăng Nhập</h2>
+      
+      <form id="frLogin" name="logIn">
+        <p>
+
+        <div>
+          <label for="user">Tên đăng nhập:</label>
+          <input type="text" id="user" name="user" required onfocus="doimau()" onblur="doilai()">
+        </div>
+        </p>
+        <p>
+        
+        <div>
+          <label for="password">Mật khẩu:</label>
+          <input type="password" id="password" name="password" required >
+        </div>
+        </p>
+        <p>
+            <div >
+                <label for="sex">Giới tính: </label>
+            
+            <select name="gioiTinh" id="gioiTinh" onchange="thayGioiTinh(this)">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+                <option value="Không xác định">Không xác định</option>
+            </select>
+            </div>
+          </form>
+          <script>
+            function doimau(){
+                document.getElementById('user').style.color="lightblue";
+                document.getElementById('user').style.fontSize="30px";
+            }
+            function doilai(){
+                document.getElementById('user').style.color="black";
+                document.getElementById('user').style.fontSize="15px";
+            }
+            function thayGioiTinh(elenment){
+                var gioiTinh = elenment.value;
+                alert("Bạn đã chọn giới tính " + gioiTinh);  
+                  }
+          </script>
+        </p>
+        <input type="submit" value="Đăng Nhập" >
+
+    </body>
+    </html>
+    
