@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lấy dữ liệu</title>
+</head>
+<body>
+    <h1>Đăng ký</h1>
+    <input type="text" name="txtName" id="txtName"/>
+    <br>
+    <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đống ý nhập thông tin
+    
+    <p>
+    <button onclick="checkDangky()">Gửi dữ liệu</button>
+    </p>
+    <script>
+        function checkDangky(){
+           var name = document.getElementById(txtName).value;
+            var accept = document.getElementById(chAcpt).cheked;
+            document.getElementById("Ket qua").innerHTML("Tên người dùng là: " + name + ", đã check" + accept  );
+
+        }
+    </script>
+</body>
+</html>
