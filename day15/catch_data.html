@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lấy dữ liệu</title>
@@ -10,17 +10,35 @@
     <h1>Đăng ký</h1>
     <input type="text" name="txtName" id="txtName"/>
     <br>
-    <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đống ý nhập thông tin
+    <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đồng ý nhập thông tin
     
     <p>
-    <button onclick="checkDangky()">Gửi dữ liệu</button>
+        <input type="radio" name="Gioitinh" id="Gioitinh1" value="Nam"/>Nam
+        <input type="radio" name="Gioitinh" id="Gioitinh2" value="Nữ"/>Nữ
+        <input type="radio" name="Gioitinh" id="Gioitinh3" value="Khác"/>Khác
     </p>
+    
+    <button onclick="checkDangky()">Gửi dữ liệu</button>
+
+    <div id="ketqua"></div>
     <script>
         function checkDangky(){
-           var name = document.getElementById(txtName).value;
-            var accept = document.getElementById(chAcpt).cheked;
-            document.getElementById("Ket qua").innerHTML("Tên người dùng là: " + name + ", đã check" + accept  );
+            var name = document.getElementById("txtName").value;
+            var accept = document.getElementById("chAcpt").checked;
+            var rdGioitinh = document.getElementsByName("Gioitinh");
+            var gioiTinh = "";
+            for (var i = 0; i < rdGioitinh.length; i++) {
+                if (rdGioitinh[i].checked) {
+                    gioiTinh = rdGioitinh[i].value;
+                    break;
+                }
+            }
 
+            document.getElementById("ketqua").innerHTML = 'Tên người dùng là: ' + name + '<br>Đã check: ' + accept + "<br>Giới tính: " + gioiTinh;
+            
+            if (gioiTinh === "") {
+                alert("Bạn vui lòng chọn giới tính!");
+            }
         }
     </script>
 </body>
