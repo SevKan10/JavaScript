@@ -11,71 +11,52 @@
         <h1>Đăng Nhập</h1>
 
     </font>
-    <!-- mail -->
-    <p>
-        <label for="text">Địa chỉ Email: </label>
-        <input type="text" name="txtEmail" id="txtEmail" required onfocus="doico4()" onblur="doilai4()">
-    </p>
-       <!-- mật khẩu -->
-       <p>
-        <label for="password">Mật khẩu: </label>
-        <input type="password" name="txtPass" id="txtPass" required onfocus="doico5()" onblur="doilai5()">
-    </p>
-    <p>
-        <label for="chAcpt">
-            <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đồng ý nhập thông tin </p> <br>
-        </label>
-    <button onclick="checkDangnhap()">Đăng nhập</button>
-    <button type="button" onclick="tai_lai_trang()">Nhập lại</button>
-
-
-    <div id="ketqua"></div>
-    <script>
-        function checkDangnhap(){
-            
-            var Mail = document.getElementById("txtEmail").value;
-            var matKhau = document.getElementById("txtPass").value;
-
-            var rdGioitinh = document.getElementsByName("Gioitinh");
-            for (var i = 0; i < rdGioitinh.length; i++) {
-                if (rdGioitinh[i].checked) {
-                    gioiTinh = rdGioitinh[i].value;
-                    break;
-                }
-            }
-
- document.getElementById("ketqua").innerHTML = 'Bạn đã đăng nhạp thành công!'
-            
-            if (matKhau="") {
-                alert("Vui lòng thử lại Mật khẩu, Email");
-                
-            }
-        }
    
-            //Địa chỉ mail
-            //
-            function doico4(){
-                document.getElementById('txtEmail').style.color="black";
-                document.getElementById('txtEmail').style.fontSize="30px";
-            }
-            function doilai4(){
-                document.getElementById('txtEmail').style.color="red";
-                document.getElementById('txtEmail').style.fontSize="15px";
-            } 
-            //Pass
-            //
-            function doico5(){
-                document.getElementById('txtPass').style.color="black";
-                document.getElementById('txtPass').style.fontSize="30px";
-            }
-            function doilai5(){
-                document.getElementById('txtPass').style.color="red";
-                document.getElementById('txtPass').style.fontSize="15px";
-            } 
 
-            function tai_lai_trang(){
+        <form id="loginForm">
+        <label for="user">Email:</label>
+        <input type="text" id="user" required onfocus="doilon1()" onblur="doilai1()"><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required onfocus="doilon2()" onblur="doilai2()"><br><br>
+        <button type="submit">Login</button>
+        <button type="button" onclick="tai_lai_trang()">Nhập lại</button>
+        </form>
+
+        <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            var username = document.getElementById("user").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "khangkhuu10727@gmail.com" && password === "khang1007") {
+            window.location.href = "trang_chu.html"; // Thay thế home.html bằng trang chủ thực tế của bạn
+            } else {
+            alert("Invalid username or password");
+            }
+        });
+
+
+
+            function doilon1(){
+                document.getElementById('user').style.color="black";
+                document.getElementById('user').style.fontSize="30px";
+            }
+            function doilai1(){
+                document.getElementById('user').style.color="red";
+                document.getElementById('user').style.fontSize="15px";
+            }
+            function doilon2(){
+                document.getElementById('password').style.color="black";
+                document.getElementById('password').style.fontSize="30px";
+            }
+            function doilai2(){
+                document.getElementById('password').style.color="red";
+                document.getElementById('password').style.fontSize="15px";
+            }
+        function tai_lai_trang(){
             location.reload();
         }
-    </script>
+                </script>
+
 </body>
 </html>
