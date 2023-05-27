@@ -10,18 +10,19 @@
     <h1>Đăng ký</h1>
     <!-- họ tên -->
     <label for="text">Họ và Tên: </label>
-    <input type="text" name="txtName" id="txtName"  required onfocus="doico1()" onblur="doilai2()">
+    <input type="text" name="txtName" id="txtName"  required onfocus="doico1()" onblur="doilai1()">
     <!-- địa chỉ -->
     <p>
     <label for="text">Địa chỉ: </label>
-    <input type="text" name="txtLocal" id="txtLocal"/>
+    <input type="text" name="txtLocal" id="txtLocal" required onfocus="doico2()" onblur="doilai2()">
     </p>
     <!-- sđt -->
     <p>
         <label for="text">Số điện thoại: </label>
-        <input type="text" name="txtNum" id="txtNum"/>
+        <input type="text" name="txtNum" id="txtNum" required onfocus="doico3()" onblur="doilai3()">
     </p>
-    <!-- Ngày tháng năm sinh -->
+    
+    
     <p>
         <label for="text">Ngày, tháng, năm sinh: </label>
         <!-- day -->
@@ -77,7 +78,7 @@
         </select>
         <!-- years -->
         <select class="form-select" id="year" name="year">
-            <option value="">year</option>
+            <option value="">Năm</option>
             <option value="1940">1940</option>
             <option value="1941">1941</option>
             <option value="1942">1942</option>
@@ -166,17 +167,27 @@
     </p>
     <p>
         <label for="text">Địa chỉ Email: </label>
-        <input type="text" name="txtEmail" id="txtEmail"/>
+        <input type="text" name="txtEmail" id="txtEmail" required onfocus="doico4()" onblur="doilai4()">
     </p>
     <p>
         <label for="text">Giới tính: </label>
-        <input type="radio" name="Gioitinh" id="Gioitinh1" value="Nam"/>Nam
-        <input type="radio" name="Gioitinh" id="Gioitinh2" value="Nữ"/>Nữ
-        <input type="radio" name="Gioitinh" id="Gioitinh3" value="Khác"/>Khác
+        <label for="Gioitinh1">
+            <input type="radio" name="Gioitinh" id="Gioitinh1" value="Nam"/>Nam
+        </label>
+        <label for="Gioitinh2">
+            <input type="radio" name="Gioitinh" id="Gioitinh2" value="Nữ"/>Nữ
+        </label>
+        <label for="Gioitinh3">
+            <input type="radio" name="Gioitinh" id="Gioitinh3" value="Khác"/>Khác
+        </label>
     </p>
     <p>
-    <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đồng ý nhập thông tin </p> <br>
+        <label for="chAcpt">
+            <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đồng ý nhập thông tin </p> <br>
+        </label>
     <button onclick="checkDangky()">Gửi dữ liệu</button>
+    <button type="button" onclick="tai_lai_trang()">Nhập lại</button>
+
 
     <div id="ketqua"></div>
     <script>
@@ -206,14 +217,49 @@
                 
             }
         }
-        function doico1(){
-                document.getElementById('txtName').style.color="lightblue";
+           //tên
+           function doico1(){
+                document.getElementById('txtName').style.color="black";
                 document.getElementById('txtName').style.fontSize="30px";
             }
             function doilai1(){
-                document.getElementById('txtName').style.color="black";
+                document.getElementById('txtName').style.color="red";
                 document.getElementById('txtName').style.fontSize="15px";
             }
+            //địa chỉ
+            //
+            function doico2(){
+                document.getElementById('txtLocal').style.color="black";
+                document.getElementById('txtLocal').style.fontSize="30px";
+            }
+            function doilai2(){
+                document.getElementById('txtLocal').style.color="red";
+                document.getElementById('txtLocal').style.fontSize="15px";
+            }    
+            //số đth
+            //
+            function doico3(){
+                document.getElementById('txtNum').style.color="black";
+                document.getElementById('txtNum').style.fontSize="30px";
+            }
+            function doilai3(){
+                document.getElementById('txtNum').style.color="red";
+                document.getElementById('txtNum').style.fontSize="15px";
+            }   
+            //Địa chỉ mail
+            //
+            function doico4(){
+                document.getElementById('txtEmail').style.color="black";
+                document.getElementById('txtEmail').style.fontSize="30px";
+            }
+            function doilai4(){
+                document.getElementById('txtEmail').style.color="red";
+                document.getElementById('txtEmail').style.fontSize="15px";
+            } 
+
+            function tai_lai_trang(){
+            location.reload();
+        }
     </script>
 </body>
 </html>
