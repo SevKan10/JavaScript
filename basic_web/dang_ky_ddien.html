@@ -194,7 +194,7 @@
         <label for="chAcpt">
             <input type="checkbox" name="chAcpt" id="chAcpt"/> Bạn đồng ý nhập thông tin </p> <br>
         </label>
-    <button onclick="checkDangky()">Gửi dữ liệu</button>
+    <button onclick="checkDangky()">Đăng ký</button>
     <button type="button" onclick="tai_lai_trang()">Nhập lại</button>
 
 
@@ -209,6 +209,7 @@
             var Month = document.getElementById("month").value;
             var Year = document.getElementById("year").value;
             var Mail = document.getElementById("txtEmail").value;
+            var matKhau = document.getElementById("txtPass").value;
 
             var rdGioitinh = document.getElementsByName("Gioitinh");
             var gioiTinh = "";
@@ -218,8 +219,7 @@
                     break;
                 }
             }
-
- document.getElementById("ketqua").innerHTML = 'Tên người dùng là: ' + name + '<br>Đã check: ' + accept + "<br>Giới tính: " + gioiTinh + "<br>Địa chỉ: " + local +"<br>SĐT: " + phoneNum + "<br>Sinh Ngày: " + Day +" Tháng " + Month +" Năm "+ Year + "<br>Email: " + Mail;
+ document.getElementById("ketqua").innerHTML = 'Tên người dùng là: ' + name + '<br>Đã check: ' + accept + "<br>Giới tính: " + gioiTinh + "<br>Địa chỉ: " + local +"<br>SĐT: " + phoneNum + "<br>Sinh Ngày: " + Day +" Tháng " + Month +" Năm "+ Year + "<br>Email: " + Mail + "<br>Mật khẩu: " + matKhau;
             
             if (gioiTinh === "") {
                 alert("Bạn vui lòng chọn giới tính!");
