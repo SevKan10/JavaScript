@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thay đổi màu nền</title>
+
+</head>
+<body>
+    Thay đổi màu nền web
+
+    <select id="slNen">
+    
+    <option value="">Select</option>
+    <option value="yellow">Yellow</option>    
+    <option value="black">Black</option>
+    <option value="green">Green</option>
+    
+    </select>
+    <script src="jquery-3.7.0.min.js"></script>
+    
+    <script>
+    
+        $(document).ready(function(){ 
+            $("#slNen").change(function(){
+        
+        // document.getElementById().value
+        
+        var mauNen = $(this).val();
+        debugger;
+        $(this).css('background-color,mauNen);  
+        $(body)
+        })
+        });
+     </script>
+</body>
+</html>
